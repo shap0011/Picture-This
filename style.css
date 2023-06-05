@@ -1,3 +1,5 @@
+/* base css */
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap');
 
 html,
@@ -36,5 +38,34 @@ img {
 @media (min-width: 960px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Determine which image sizes will be necessary.
+
+if the viewport is smaller than 960px, 
+determine which image sizes will be necessary
+
+Landscape Image:
+
+viewport       1x      
+320px        320px     
+480px        480px     
+720px        720px     
+959px        959px     
+
+if the viewport is 960px or larger, 
+determine which image sizes will be necessary
+
+Square Image:
+
+viewport       1x    
+1280px       640px     
+1600px       800px     
+*/
+
+@media (max-width: 959px) {
+  .header {
+    grid-template-rows: repeat(2, 1fr);
   }
 }
